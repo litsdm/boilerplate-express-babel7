@@ -1,0 +1,71 @@
+{
+  "name": "instasnoop-backend",
+  "version": "0.3.0",
+  "description": "Insta Snoop backend",
+  "main": "dist",
+  "scripts": {
+    "dev": "nodemon -w src --exec \"babel-node src\"",
+    "build": "babel src -s -D -d dist",
+    "start": "node dist",
+    "prestart": "npm run -s build",
+    "test": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      },
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-function-bind",
+      "@babel/plugin-proposal-export-default-from",
+      "@babel/plugin-proposal-throw-expressions",
+      "@babel/plugin-proposal-export-namespace-from",
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-syntax-import-meta"
+    ]
+  },
+  "repository": "cdiezmoran/instasnoop-be",
+  "author": "Carlos Diez <cdiezmoran@gmail.com>",
+  "license": "",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "resource-router-middleware": "^0.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^6.0.1",
+    "nodemon": "^1.19.1"
+  }
+}
